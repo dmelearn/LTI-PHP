@@ -627,7 +627,7 @@ EOF;
                             }
                         case self::EXT_WRITE:
                         case self::EXT_DELETE:
-                            $ok = true;
+                            $response = true;
                             break;
                     }
                 }
