@@ -137,11 +137,11 @@ EOD;
             $platform->consumerName = $row['consumer_name'];
             $platform->consumerVersion = $row['consumer_version'];
             $platform->consumerGuid = $row['consumer_guid'];
-            $platform->profile = Util::json_decode($row['profile']);
+            $platform->profile = Util::jsonDecode($row['profile']);
             $platform->toolProxy = $row['tool_proxy'];
             $settingsValue = $row['settings']->load();
             if (is_string($settingsValue)) {
-                $settings = Util::json_decode($settingsValue, true);
+                $settings = Util::jsonDecode($settingsValue, true);
                 if (!is_array($settings)) {
                     $settings = @unserialize($settingsValue);  // check for old serialized setting
                 }
@@ -487,11 +487,11 @@ EOD;
                 $platform->consumerName = $row['consumer_name'];
                 $platform->consumerVersion = $row['consumer_version'];
                 $platform->consumerGuid = $row['consumer_guid'];
-                $platform->profile = Util::json_decode($row['profile']);
+                $platform->profile = Util::jsonDecode($row['profile']);
                 $platform->toolProxy = $row['tool_proxy'];
                 $settingsValue = $row['settings']->load();
                 if (is_string($settingsValue)) {
-                    $settings = Util::json_decode($settingsValue, true);
+                    $settings = Util::jsonDecode($settingsValue, true);
                     if (!is_array($settings)) {
                         $settings = @unserialize($settingsValue);  // check for old serialized setting
                     }
@@ -574,7 +574,7 @@ EOD;
             $context->type = $row['type'];
             $settingsValue = $row['settings']->load();
             if (is_string($settingsValue)) {
-                $settings = Util::json_decode($settingsValue, true);
+                $settings = Util::jsonDecode($settingsValue, true);
                 if (!is_array($settings)) {
                     $settings = @unserialize($settingsValue);  // check for old serialized setting
                 }
@@ -805,7 +805,7 @@ EOD;
             $settings = $row['settings']->load();
             $settingsValue = $row['settings']->load();
             if (is_string($settingsValue)) {
-                $settings = Util::json_decode($settingsValue, true);
+                $settings = Util::jsonDecode($settingsValue, true);
                 if (!is_array($settings)) {
                     $settings = @unserialize($settingsValue);  // check for old serialized setting
                 }
@@ -1224,7 +1224,7 @@ EOD;
                 $row = oci_fetch_assoc($query);
                 if ($row !== false) {
                     $row = array_change_key_case($row);
-                    $scopes = Util::json_decode($row['scopes']->load(), true);
+                    $scopes = Util::jsonDecode($row['scopes']->load(), true);
                     if (!is_array($scopes)) {
                         $scopes = [];
                     }
@@ -1585,7 +1585,7 @@ EOD;
             $tool->initiateLoginUrl = $row['initiate_login_url'];
             $redirectionUrisValue = $row['redirection_uris']->load();
             if (is_string($redirectionUrisValue)) {
-                $redirectionUris = Util::json_decode($redirectionUrisValue, true);
+                $redirectionUris = Util::jsonDecode($redirectionUrisValue, true);
                 if (!is_array($redirectionUris)) {
                     $redirectionUris = [];
                 }
@@ -1598,7 +1598,7 @@ EOD;
             $tool->signatureMethod = $row['signature_method'];
             $settingsValue = $row['settings']->load();
             if (is_string($settingsValue)) {
-                $settings = Util::json_decode($settingsValue, true);
+                $settings = Util::jsonDecode($settingsValue, true);
                 if (!is_array($settings)) {
                     $settings = [];
                 }
@@ -1786,7 +1786,7 @@ EOD;
                 $tool->initiateLoginUrl = $row['initiate_login_url'];
                 $redirectionUrisValue = $row['redirection_uris']->load();
                 if (is_string($redirectionUrisValue)) {
-                    $redirectionUris = Util::json_decode($redirectionUrisValue, true);
+                    $redirectionUris = Util::jsonDecode($redirectionUrisValue, true);
                     if (!is_array($redirectionUris)) {
                         $redirectionUris = [];
                     }
@@ -1799,7 +1799,7 @@ EOD;
                 $tool->signatureMethod = $row['signature_method'];
                 $settingsValue = $row['settings']->load();
                 if (is_string($settingsValue)) {
-                    $settings = Util::json_decode($settingsValue, true);
+                    $settings = Util::jsonDecode($settingsValue, true);
                     if (!is_array($settings)) {
                         $settings = [];
                     }

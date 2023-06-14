@@ -109,7 +109,7 @@ trait CanvasApi
             $http = new HttpMessage($url, 'GET', null, "Authorization: Bearer {$this->token}");
             $http->send();
             if ($http->ok) {
-                $allCategories = Util::json_decode($http->response);
+                $allCategories = Util::jsonDecode($http->response);
                 $http->ok = !is_null($allCategories) && is_array($allCategories);
             }
             $url = '';
@@ -153,7 +153,7 @@ trait CanvasApi
             $http = new HttpMessage($url, 'GET', null, "Authorization: Bearer {$this->token}");
             $http->send();
             if ($http->ok) {
-                $enrolments = Util::json_decode($http->response);
+                $enrolments = Util::jsonDecode($http->response);
                 $http->ok = !is_null($enrolments) && is_array($enrolments);
             }
             $url = '';
@@ -195,7 +195,7 @@ trait CanvasApi
             $http = new HttpMessage($url, 'GET', null, "Authorization: Bearer {$this->token}");
             $http->send();
             if ($http->ok) {
-                $enrolments = Util::json_decode($http->response);
+                $enrolments = Util::jsonDecode($http->response);
                 $http->ok = !is_null($enrolments) && is_array($enrolments);
             }
             $url = '';
@@ -273,7 +273,7 @@ trait CanvasApi
             $http = new HttpMessage($url, 'GET', null, "Authorization: Bearer {$this->token}");
             $http->send();
             if ($http->ok) {
-                $allGroups = Util::json_decode($http->response);
+                $allGroups = Util::jsonDecode($http->response);
                 $http->ok = !is_null($allGroups) && is_array($allGroups);
             }
             $url = '';

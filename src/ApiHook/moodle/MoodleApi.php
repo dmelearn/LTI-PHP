@@ -337,7 +337,7 @@ trait MoodleApi
         $http = new HttpMessage($serviceUrl, 'POST', $params);
         $http->send();
         if ($http->ok) {
-            $json = Util::json_decode($http->response);
+            $json = Util::jsonDecode($http->response);
             $http->ok = !is_null($json) && is_array($json);
             if (!$http->ok) {
                 Util::logError("Moodle web service returned an error: {$http->response}");

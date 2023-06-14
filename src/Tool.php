@@ -778,7 +778,7 @@ class Tool
                 $http = new HttpMessage($parameters['openid_configuration']);
                 $this->ok = $http->send();
                 if ($this->ok) {
-                    $platformConfig = Util::json_decode($http->response, true);
+                    $platformConfig = Util::jsonDecode($http->response, true);
                     $this->ok = !empty($platformConfig);
                 }
                 if (!$this->ok) {
@@ -948,7 +948,7 @@ class Tool
             $http = new HttpMessage($platformConfig['registration_endpoint'], 'POST', $body, $headers);
             $this->ok = $http->send();
             if ($this->ok) {
-                $registrationConfig = Util::json_decode($http->response, true);
+                $registrationConfig = Util::jsonDecode($http->response, true);
                 $this->ok = !empty($registrationConfig);
             }
             if (!$this->ok) {
@@ -1580,7 +1580,7 @@ EOD;
                 if (!$this->ok) {
                     $this->reason = 'Platform profile not accessible.';
                 } else {
-                    $tcProfile = Util::json_decode($http->response);
+                    $tcProfile = Util::jsonDecode($http->response);
                     $this->ok = !is_null($tcProfile);
                     if (!$this->ok) {
                         $this->reason = 'Invalid JSON in platform profile.';
@@ -1654,7 +1654,7 @@ EOD;
             $url .= 'lti_version=' . $this->ltiVersion->value;
             $http = new HttpMessage($url, 'GET', null, 'Accept: application/vnd.ims.lti.v2.toolconsumerprofile+json');
             if ($http->send()) {
-                $tcProfile = Util::json_decode($http->response);
+                $tcProfile = Util::jsonDecode($http->response);
                 if (!is_null($tcProfile)) {
                     $this->platform->profile = $tcProfile;
                     $doSavePlatform = true;

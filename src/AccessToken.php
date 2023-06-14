@@ -180,7 +180,7 @@ class AccessToken
                     }
                     $http = new HttpMessage($url, $method, $body, 'Accept: application/json');
                     if ($http->send() && !empty($http->response)) {
-                        $http->responseJson = Util::json_decode($http->response);
+                        $http->responseJson = Util::jsonDecode($http->response);
                         if (!is_null($http->responseJson) && !empty($http->responseJson->access_token) && !empty($http->responseJson->expires_in)) {
                             if (isset($http->responseJson->scope)) {
                                 $scopesAccepted = explode(' ', $http->responseJson->scope);

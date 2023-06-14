@@ -473,7 +473,7 @@ trait System
                         $mapping = Util::JWT_CLAIM_MAPPING[$key];
                     }
                     if (isset($mapping['isObject']) && $mapping['isObject']) {
-                        $value = Util::json_decode($value);
+                        $value = Util::jsonDecode($value);
                     } elseif (isset($mapping['isArray']) && $mapping['isArray']) {
                         $value = array_map('trim', explode(',', $value));
                         $value = array_filter($value);
@@ -518,7 +518,7 @@ trait System
                     if (empty($value)) {
                         $value = null;
                     } else {
-                        $json = Util::json_decode($value);
+                        $json = Util::jsonDecode($value);
                         if (!is_null($json)) {
                             $value = $json;
                         }
@@ -541,7 +541,7 @@ trait System
                 }
             }
             if (!empty($messageParameters['unmapped_claims'])) {
-                $claims = Util::json_decode($messageParameters['unmapped_claims']);
+                $claims = Util::jsonDecode($messageParameters['unmapped_claims']);
                 foreach ($claims as $claim => $value) {
                     if ($fullyQualified) {
                         $messageClaims = array_merge($messageClaims, self::fullyQualifyClaim($claim, $value));
@@ -1005,7 +1005,7 @@ trait System
         $http = new HttpMessage($service->endpoint, $method, $data, $header);
 // Parse JSON response
         if ($http->send() && !empty($http->response)) {
-            $http->responseJson = Util::json_decode($http->response);
+            $http->responseJson = Util::jsonDecode($http->response);
             $http->ok = !is_null($http->responseJson);
         }
 

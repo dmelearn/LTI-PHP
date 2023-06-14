@@ -93,11 +93,11 @@ class ToolSettings extends Service
         if (!$http->ok) {
             $response = false;
         } elseif ($this->simple) {
-            $response = Util::json_decode($http->response, true);
+            $response = Util::jsonDecode($http->response, true);
         } elseif (isset($http->responseJson->{'@graph'})) {
             $response = [];
             foreach ($http->responseJson->{'@graph'} as $level) {
-                $settings = Util::json_decode(json_encode($level->custom), true);
+                $settings = Util::jsonDecode(json_encode($level->custom), true);
                 unset($settings['@id']);
                 $response[self::$LEVEL_NAMES[$level->{'@type'}]] = $settings;
             }

@@ -512,9 +512,9 @@ EOD;
      * @param string|null $str   The JSON string to be decoded
      * @param bool $associative  True to return JSON objects as associative arrays
      *
-     * @return string
+     * @return mixed
      */
-    public static function json_decode(?string $str, bool $associative = false): object|array|null
+    public static function jsonDecode(?string $str, bool $associative = false): object|array|null
     {
         if (!empty($str)) {
             $json = \json_decode($str, $associative);
