@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace ceLTIc\LTI;
 
+use ceLTIc\LTI\Service;
+
 /**
  * Class to represent a line-item
  *
