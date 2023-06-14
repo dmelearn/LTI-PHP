@@ -285,7 +285,7 @@ class Context
      * Set a setting value.
      *
      * @param string $name       Name of setting
-     * @param array|null $value  Value to set, use an empty value to delete a setting (optional, default is null)
+     * @param string|array|null $value  Value to set, use an empty value to delete a setting (optional, default is null)
      */
     public function setSetting(string $name, string|array|null $value = null): void
     {
@@ -652,7 +652,7 @@ class Context
     /**
      * Get the Line-item service object.
      *
-     * @return Service\\LineItem|bool  Line-item service, or false if not available
+     * @return Service\LineItem|bool  Line-item service, or false if not available
      */
     private function getLineItemService(): Service\LineItem|bool
     {

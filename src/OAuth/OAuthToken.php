@@ -12,21 +12,21 @@ namespace ceLTIc\LTI\OAuth;
  */
 class OAuthToken
 {
-    // access tokens and request tokens
+    // Access tokens and request tokens
 
     /**
      * Name.
      *
      * @var string $key
      */
-    public $key;
+    public string $key;
 
     /**
      * Secret.
      *
      * @var string $secret
      */
-    public $secret;
+    public string $secret;
 
     /**
      * Class constructor.

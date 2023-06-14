@@ -8,7 +8,7 @@ use ceLTIc\LTI\Platform;
 use ceLTIc\LTI\SubmissionReview;
 
 /**
- * Class to implement the Line-Item service
+ * Class to implement the Line-item service
  *
  * @author  Stephen P Vickers <stephen@spvsoftwareproducts.com>
  * @copyright  SPV Software Products
@@ -142,7 +142,7 @@ class LineItem extends AssignmentGrade
     /**
      * Create a new line-item.
      *
-     * @param LTI\\LineItem $lineItem  Line-item object
+     * @param LTI\LineItem $lineItem  Line-item object
      *
      * @return bool  True if successful
      */
@@ -165,7 +165,7 @@ class LineItem extends AssignmentGrade
     /**
      * Save a line-item.
      *
-     * @param LTI\\LineItem $lineItem  Line-item object
+     * @param LTI\LineItem $lineItem  Line-item object
      *
      * @return bool  True if successful
      */
@@ -187,7 +187,7 @@ class LineItem extends AssignmentGrade
     /**
      * Delete a line-item.
      *
-     * @param LTI\\LineItem $lineItem  Line-item object
+     * @param LTI\LineItem $lineItem  Line-item object
      *
      * @return bool  True if successful
      */
@@ -270,7 +270,7 @@ class LineItem extends AssignmentGrade
     /**
      * Create a JSON string from a line-item.
      *
-     * @param LTI\\LineItem $lineItem  Line-item object
+     * @param LTI\LineItem $lineItem  Line-item object
      *
      * @return string  JSON representation of line-item
      */

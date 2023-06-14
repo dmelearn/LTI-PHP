@@ -41,7 +41,7 @@ class OAuthRequest
      *
      * @var string $base_string
      */
-    public $base_string;
+    public string $base_string;
 
     /**
      * Version.

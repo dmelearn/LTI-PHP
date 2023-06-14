@@ -18,28 +18,28 @@ class OAuthServer
      *
      * @var int $timestamp_threshold
      */
-    protected $timestamp_threshold = 300; // in seconds, five minutes
+    protected int $timestamp_threshold = 300; // in seconds, five minutes
 
     /**
      * Version string.
      *
      * @var string $version
      */
-    protected $version = '1.0';
+    protected string $version = '1.0';
 
     /**
      * Signature methods.
      *
      * @var array $signature_methods
      */
-    protected $signature_methods = [];
+    protected array $signature_methods = [];
 
     /**
      * Data store.
      *
      * @var OAuthDataStore $data_store
      */
-    protected $data_store;
+    protected OAuthDataStore $data_store;
 
     /**
      * Class constructor.

@@ -1627,7 +1627,7 @@ EOD;
     /**
      * Get the Line-item service object.
      *
-     * @return Service\\LineItem  Line-item service, or false if not available
+     * @return Service\LineItem  Line-item service, or false if not available
      */
     private function getLineItemService(): Service\LineItem
     {

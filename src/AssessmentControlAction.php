@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace ceLTIc\LTI;
 
+use \DateTime;
+
 /**
  * Class to represent an assessment control action
  *
@@ -69,9 +71,9 @@ class AssessmentControlAction
     /**
      * Incident date value.
      *
-     * @var \DateTime|null $date
+     * @var DateTime|null $date
      */
-    private ?\DateTime $date = null;
+    private ?DateTime $date = null;
 
     /**
      * Severity.
@@ -84,10 +86,10 @@ class AssessmentControlAction
      * Class constructor.
      *
      * @param string $action   Action
-     * @param \DateTime $date  Date/time of incident
+     * @param DateTime $date  Date/time of incident
      * @param float $severity  Severity of incident
      */
-    public function __construct(string $action, \DateTime $date, float $severity)
+    public function __construct(string $action, DateTime $date, float $severity)
     {
         $this->action = $action;
         $this->date = $date;
@@ -109,7 +111,7 @@ class AssessmentControlAction
      *
      * @return DateTime Incident date value
      */
-    public function getDate(): \DateTime
+    public function getDate(): DateTime
     {
         return $this->date;
     }
