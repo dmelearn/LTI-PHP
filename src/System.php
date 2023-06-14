@@ -1578,6 +1578,9 @@ trait System
 
         if (!is_array($data)) {
             if (empty($hash)) {  // Calculate body hash
+                if (is_null($data)) {
+                    $data = '';
+                }
                 $hash = match ($this->signatureMethod) {
                     'HMAC-SHA224' => base64_encode(hash('sha224', $data, true)),
                     'HMAC-SHA256' => base64_encode(hash('sha256', $data, true)),

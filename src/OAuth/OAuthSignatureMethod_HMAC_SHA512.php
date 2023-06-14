@@ -28,7 +28,7 @@ class OAuthSignatureMethod_HMAC_SHA512 extends OAuthSignatureMethod
      */
     function get_name(): string
     {
-        return "HMAC-SHA512";
+        return 'HMAC-SHA512';
     }
 
     /**
